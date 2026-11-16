@@ -13,6 +13,13 @@
       html, body { height: 100%; }
       body { overflow: hidden; }
       #root { display: flex; height: 100%; flex: 1; }
+      /* Print / PDF: print the whole page, without the side bar. */
+      @media print {
+        html, body, #root { height: auto !important; overflow: visible !important; }
+        #root * { overflow: visible !important; }
+        [role="tablist"] { display: none !important; }
+        [data-testid="report-export"], [data-testid="report-print"] { display: none !important; }
+      }
     </style>
   <link rel="icon" href="/favicon.ico"/><link rel="preload" href="/_expo/static/css/native-tabs.module-f02746686d23d4038100646013a30979.css" as="style">
 <link rel="stylesheet" href="/_expo/static/css/native-tabs.module-f02746686d23d4038100646013a30979.css"></head>
@@ -22,6 +29,6 @@
     <script>
       if ("serviceWorker" in navigator) addEventListener("load", () => navigator.serviceWorker.register("/sw.js"));
     </script>
-  <script src="/_expo/static/js/web/entry-a0f2776cc97e74a08ad2695ec7213f56.js" defer></script>
+  <script src="/_expo/static/js/web/entry-8989114df4ea8c608564d26ae3033dd6.js" defer></script>
 </body>
 </html>
